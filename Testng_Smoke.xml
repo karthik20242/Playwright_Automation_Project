@@ -1,0 +1,49 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="TestSuite"  verbose="1" parallel="classes" thread-count="3">
+<!--    verbose will show how many testng logs show in control it scales form 1-10-->
+    <!--    // thread count defines the how many test can run  simuntaneously at given moment-->
+    <test name="RegressionTests">
+
+
+        <!--        only run the groups which as name smoke
+         1) ui validations popup test
+          2) more ui validations page ui validation test
+          3) if it includes before methods then add
+                @Beforemethod(always=true)
+           this is written by using @Test(groups="smoke")
+           now where the word smoke is there that only runs-->
+
+
+        <groups>
+            <run>
+                <include name="smoke"></include>
+            </run>
+
+        </groups>
+
+
+        <classes>
+            <class name="Tests.FrameworkBuildDataDrivenTest"></class>
+            <class name ="Tests.MoreUIValidationTest"></class>
+            <class name="Tests.UIValidations"></class>
+            <class name="Tests.MockWebTest"></class>
+
+
+        </classes>
+    </test>
+
+
+
+
+
+    <!--<test name="smokeTest">-->
+    <!--<classes>-->
+    <!--    <class name="Tests.BasicsTest"></class>-->
+
+
+
+    <!--</classes>-->
+    <!--</test>-->
+
+</suite>
